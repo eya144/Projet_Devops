@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    environment {
+        SONAR_HOST = "http://192.168.56.10:9000"
+        SONAR_TOKEN = "squ_65c4e1039f44581dbaaffdb82fa610a7edf27aa9"
+        PROJECT_KEY = "devops"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/eya144/Projet_Devops.git'
+            }
+        }
+
+        stage('Build & SonarQube Analysis') {
+            steps {
+                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=${devops} -Dsonar.host.url=${http://192.168.56.10:9000} -Dsonar.login=${squ_65c4e1039f44581dbaaffdb82fa610a7edf27aa9} -DskipTests"
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Build & SonarQube analysis successful!"
+        }
+        failure {
+            echo "Build or analysis failed."
+        }
+    }
+}
