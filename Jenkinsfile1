@@ -9,10 +9,10 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                git 'https://github.com/eya144/Projet_Devops.git'
-            }
-        }
+    steps {
+        git branch: 'rahma', url: 'https://github.com/eya144/Projet_Devops.git'
+    }
+}
 
         stage('Build & SonarQube Analysis') {
             steps {
