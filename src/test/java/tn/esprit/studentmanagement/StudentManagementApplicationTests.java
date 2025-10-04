@@ -8,6 +8,7 @@ class StudentManagementApplicationTests {
 
     @Test
     void contextLoads() {
+        // ce test vérifie juste que l'application Spring Boot démarre correctement
     }
 
 }

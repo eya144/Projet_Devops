@@ -9,14 +9,20 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                git 'https://github.com/eya144/Projet_Devops.git'
-            }
-        }
+    steps {
+        git branch: 'rahma', url: 'https://github.com/eya144/Projet_Devops.git'
+    }
+}
 
         stage('Build & SonarQube Analysis') {
             steps {
-                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=${devops} -Dsonar.host.url=${http://192.168.56.10:9000} -Dsonar.login=${squ_65c4e1039f44581dbaaffdb82fa610a7edf27aa9} -DskipTests"
+                sh """
+                    mvn clean verify sonar:sonar \
+                    -Dsonar.projectKey=${PROJECT_KEY} \
+                    -Dsonar.host.url=${SONAR_HOST} \
+                    -Dsonar.login=${SONAR_TOKEN} \
+
+                """
             }
         }
     }
