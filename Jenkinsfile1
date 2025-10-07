@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         SONAR_HOST = "http://192.168.56.10:9000"
-        SONAR_TOKEN = "squ_65c4e1039f44581dbaaffdb82fa610a7edf27aa9"
-        PROJECT_KEY = "devops"
+        SONAR_TOKEN = "squ_4fef56080bc97c1fc43202729bec5e20d505c710"
+        PROJECT_KEY = "sq"
     }
 
     stages {
