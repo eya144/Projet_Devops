@@ -6,12 +6,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles("test")
-
 class StudentManagementApplicationTests {
-
     @Test
-    void contextLoads() {
-        // ce test vérifie juste que l'application Spring Boot démarre correctement
-    }
-
+    void contextLoads() { }
 }
